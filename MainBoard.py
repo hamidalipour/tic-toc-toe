@@ -4,6 +4,20 @@ class MainBoard():
         pass
 
     @staticmethod
+    def print_history():
+        with open('history.txt', 'r') as f:
+            history = f.readlines()
+            for line in history:
+                print(line)
+            print()
+
+    @staticmethod
+    def save_result(result, player1, player2):
+        with open('history.txt', 'a') as f:
+            data = f'{player1} played with {player2} and {result}'
+            f.write(f"\n{data}")
+
+    @staticmethod
     def run():
         while True:
             print("choose one of the three options")
@@ -18,8 +32,9 @@ class MainBoard():
                 game = Game.Game(player1, player2)
                 result = game.play()
                 print(result)
+                MainBoard.save_result(result, player1, player2)
             if input_ == "V":
-                pass
+                MainBoard.print_history()
             if input_ == "Q":
                 print("see you later")
                 break

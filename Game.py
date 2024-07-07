@@ -2,7 +2,7 @@ class Game:
     PLAYER1 = "player 1 is winner"
     PLAYER2 = "player 2 is winner"
     FULL = "it's a draw!"
-    CONTINUE = "the game is continues"
+    CONTINUE = "the game continues"
     def __init__(self, player1, player2):
         self.player1 = player1
         self.player2 = player2
