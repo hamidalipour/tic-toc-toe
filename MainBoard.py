@@ -6,7 +6,7 @@ class MainBoard():
     @staticmethod
     def run():
         while True:
-            print("choose on of the three options")
+            print("choose one of the three options")
             print("type S for starting the game")
             print("type V for visiting game history")
             print("type Q for quit")
@@ -17,6 +17,7 @@ class MainBoard():
                 player2 = input("Player 2: ")
                 game = Game.Game(player1, player2)
                 result = game.play()
+                print(result)
             if input_ == "V":
                 pass
             if input_ == "Q":
