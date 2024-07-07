@@ -5,11 +5,14 @@ class MainBoard():
 
     @staticmethod
     def print_history():
-        with open('history.txt', 'r') as f:
-            history = f.readlines()
-            for line in history:
-                print(line)
-            print()
+        try:
+            with open('history.txt', 'r') as f:
+                history = f.readlines()
+                for line in history:
+                    print(line)
+                print()
+        except FileNotFoundError:
+            print("there is no history!")
 
     @staticmethod
     def save_result(result, player1, player2):
